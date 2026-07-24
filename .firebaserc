@@ -1,0 +1,15 @@
+{
+  "projects": {
+    "default": "demo-vcqa-ref-firebase"
+  },
+  "targets": {
+    "demo-vcqa-ref-firebase": {
+      "hosting": {
+        "web": [
+          "demo-vcqa-ref-firebase"
+        ]
+      }
+    }
+  }
+}
+

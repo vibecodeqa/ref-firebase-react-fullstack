@@ -1,0 +1,19 @@
+{
+  "name": "ref-firebase-react-fullstack",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@10.17.1",
+  "scripts": {
+    "build": "pnpm --filter @vcqa-ref/shared build && pnpm --filter @vcqa-ref/functions build && pnpm --filter @vcqa-ref/web build",
+    "typecheck": "pnpm --filter @vcqa-ref/shared build && pnpm -r --sort typecheck",
+    "test": "pnpm --filter @vcqa-ref/shared build && pnpm -r --sort --if-present test",
+    "test:rules": "firebase emulators:exec --project demo-vcqa-ref-firebase --only firestore \"pnpm --filter @vcqa-ref/rules-tests test:rules\"",
+    "dev": "pnpm --filter @vcqa-ref/shared build && firebase emulators:start --project demo-vcqa-ref-firebase",
+    "ci": "pnpm typecheck && pnpm test && pnpm build && pnpm test:rules",
+    "firebase:deploy:dry": "pnpm build && firebase deploy --project demo-vcqa-ref-firebase --only hosting,functions,firestore --dry-run"
+  },
+  "devDependencies": {
+    "firebase-tools": "^14.26.0",
+    "typescript": "^5.7.3"
+  }
+}
