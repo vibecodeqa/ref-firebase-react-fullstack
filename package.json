@@ -15,5 +15,6 @@
   "devDependencies": {
     "firebase-tools": "^14.26.0",
     "typescript": "^5.7.3"
-  }
+  },
+  "license": "MIT"
 }
